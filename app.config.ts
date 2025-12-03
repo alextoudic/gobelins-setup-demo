@@ -1,9 +1,9 @@
 import { ConfigContext, ExpoConfig } from 'expo/config';
 
-const NAME = "groupe9";
-const SCHEME = "groupe9";
+const NAME = "groupe8";
+const SCHEME = "groupe8";
 const IDENTIFIER = `fr.gobelins.${SCHEME}`;
-const PROJECT_ID = "3e622638-4acc-4d90-a527-4874e94f5e80";
+const PROJECT_ID = "0559d8a6-63a1-4d17-9260-69465e4ec483";
 
 export default ({ config }: ConfigContext): ExpoConfig => {
   const identifier = process.env.APP_VARIANT === "development" ? `${IDENTIFIER}.dev` : IDENTIFIER;
