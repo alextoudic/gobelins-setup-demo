@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "setup-demo",
+    "owner": "ecni2027",
     "slug": "setup-demo",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,9 +10,11 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
+      "bundleIdentifier": "fr.gobelins.demo",
       "supportsTablet": true
     },
     "android": {
+      "package": "fr.gobelins.demo",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -43,6 +46,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "cc4cfc30-ecd2-4cf1-aa80-1101d5dae90f"
+      }
     }
   }
 }
