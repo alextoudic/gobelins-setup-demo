@@ -1,19 +1,22 @@
 import { ConfigContext, ExpoConfig } from 'expo/config';
 
-const IDENTIFIER = "fr.gobelins.demo";
+const NAME = "groupe9";
+const SCHEME = "groupe9";
+const IDENTIFIER = `fr.gobelins.${SCHEME}`;
+const PROJECT_ID = "3e622638-4acc-4d90-a527-4874e94f5e80";
 
 export default ({ config }: ConfigContext): ExpoConfig => {
   const identifier = process.env.APP_VARIANT === "development" ? `${IDENTIFIER}.dev` : IDENTIFIER;
 
   return {
     ...config,
-    name: "setup-demo",
+    name: NAME,
     owner: "ecni2027",
-    slug: "setup-demo",
+    slug: SCHEME,
     version: "1.0.0",
     orientation: "portrait",
     icon: "./assets/images/icon.png",
-    scheme: "setupdemo",
+    scheme: SCHEME,
     userInterfaceStyle: "automatic",
     newArchEnabled: true,
     ios: {
@@ -60,7 +63,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     extra: {
       router: {},
       eas: {
-        projectId: "cc4cfc30-ecd2-4cf1-aa80-1101d5dae90f"
+        projectId: PROJECT_ID,
       }
     }
   }
