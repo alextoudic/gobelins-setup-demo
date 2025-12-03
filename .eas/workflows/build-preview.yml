@@ -1,4 +1,4 @@
-name: Get Build
+name: Build Preview
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 jobs:
   fingerprint:
     type: fingerprint
-    environment: development
+    environment: preview
 
   android_get_build:
     needs: [fingerprint]
@@ -23,7 +23,14 @@ jobs:
     type: build
     params:
       platform: android
-      profile: development-simulator
+      profile: preview
+
+  android_repack:
+    needs: [android_get_build]
+    if: ${{ needs.android_get_build.outputs.build_id }}
+    type: repack
+    params:
+      build_id: ${{ needs.android_get_build.outputs.build_id }}
 
   ios_get_build:
     needs: [fingerprint]
@@ -38,4 +45,11 @@ jobs:
     type: build
     params:
       platform: ios
-      profile: development-simulator
+      profile: preview
+
+  ios_repack:
+    needs: [ios_get_build]
+    if: ${{ needs.ios_get_build.outputs.build_id }}
+    type: repack
+    params:
+      build_id: ${{ needs.ios_get_build.outputs.build_id }}
