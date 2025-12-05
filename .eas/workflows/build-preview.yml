@@ -25,13 +25,6 @@ jobs:
       platform: android
       profile: preview
 
-  android_repack:
-    needs: [android_get_build]
-    if: ${{ needs.android_get_build.outputs.build_id }}
-    type: repack
-    params:
-      build_id: ${{ needs.android_get_build.outputs.build_id }}
-
   ios_get_build:
     needs: [fingerprint]
     type: get-build
@@ -47,9 +40,10 @@ jobs:
       platform: ios
       profile: preview
 
-  ios_repack:
-    needs: [ios_get_build]
-    if: ${{ needs.ios_get_build.outputs.build_id }}
-    type: repack
+  publish_update:
+    needs: [ios_get_build, android_get_build]
+    if: ${{ needs.ios_get_build.outputs.build_id || needs.android_get_build.outputs.build_id }}
+    type: update
+    environment: preview
     params:
-      build_id: ${{ needs.ios_get_build.outputs.build_id }}
+      channel: staging

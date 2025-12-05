@@ -11,7 +11,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
   return {
     ...config,
     name: NAME,
-    owner: "ecni2027",
+    owner: "artgobelins",
     slug: SCHEME,
     version: "1.0.0",
     orientation: "portrait",
@@ -59,6 +59,12 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     experiments: {
       typedRoutes: true,
       reactCompiler: true
+    },
+    runtimeVersion: {
+      policy: "fingerprint"
+    },
+    updates: {
+      url: "https://u.expo.dev/cab54c5b-3910-45c8-b70f-46c3d3835ade"
     },
     extra: {
       router: {},

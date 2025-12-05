@@ -1,4 +1,4 @@
-name: Get Build
+name: Get Development Build
 
 on:
   push:
