@@ -1,0 +1,52 @@
+{
+  "demo": {
+    "owner": "ecni2027",
+    "slug": "demo",
+    "projectId": "cc4cfc30-ecd2-4cf1-aa80-1101d5dae90f"
+  },
+  "groupe1": {
+    "owner": "gobelins-ecni2027-groupe1",
+    "slug": "groupe1",
+    "projectId": "02cccc8f-b97c-434a-ab05-bf26882f72af"
+  },
+  "groupe2": {
+    "owner": "gobelins-ecni2027-groupe2",
+    "slug": "groupe2",
+    "projectId": "5f32a171-1e55-4d6c-8655-e9f9c043125e"
+  },
+  "groupe3": {
+    "owner": "artgobelins",
+    "slug": "groupe3",
+    "projectId": "cab54c5b-3910-45c8-b70f-46c3d3835ade"
+  },
+  "groupe4": {
+    "owner": "gobelins-ecni2027-groupe4",
+    "slug": "groupe4",
+    "projectId": "be486793-96ab-4ab6-a5f1-f01025a9657d"
+  },
+  "groupe5": {
+    "owner": "gobelins-ecni2027-groupe5",
+    "slug": "groupe5",
+    "projectId": "3ba4dcb1-9eb7-4019-b2af-e523419c2beb"
+  },
+  "groupe6": {
+    "owner": "gobelins-ecni2027-groupe6",
+    "slug": "groupe6",
+    "projectId": "0e82b8ad-e937-42af-a906-5941bd14b90a"
+  },
+  "groupe7": {
+    "owner": "gobelins-ecni2027-groupe7",
+    "slug": "groupe7",
+    "projectId": "22822d35-2304-499e-8932-a54e6acdde00"
+  },
+  "groupe8": {
+    "owner": "artgobelins",
+    "slug": "groupe8",
+    "projectId": "0559d8a6-63a1-4d17-9260-69465e4ec483"
+  },
+  "groupe9": {
+    "owner": "gobelins-ecni2027-groupe9",
+    "slug": "groupe9",
+    "projectId": "3e622638-4acc-4d90-a527-4874e94f5e80"
+  }
+}

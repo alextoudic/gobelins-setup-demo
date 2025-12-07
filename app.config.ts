@@ -1,17 +1,17 @@
 import { ConfigContext, ExpoConfig } from 'expo/config';
-
-const GROUPE_NAME = "demo";
-const IDENTIFIER = `fr.gobelins.${GROUPE_NAME}`;
-const OWNER = "ecni2027";
+import groupConfigs from './group-configs.json';
 
 export default ({ config }: ConfigContext): ExpoConfig => {
-  const identifier = process.env.APP_VARIANT === "development" ? `${IDENTIFIER}.dev` : IDENTIFIER;
+  const { owner, slug, projectId } = groupConfigs[process.env.GROUP_NAME as keyof typeof groupConfigs] ?? groupConfigs.demo;
+  
+  const baseIdentifier = `fr.gobelins.${slug}`;
+  const identifier = process.env.APP_VARIANT === "development" ? `${baseIdentifier}.dev` : baseIdentifier;
 
   return {
     ...config,
     name: "setup-demo",
-    owner: OWNER,
-    slug: GROUPE_NAME,
+    owner,
+    slug,
     version: "1.0.0",
     orientation: "portrait",
     icon: "./assets/images/icon.png",
@@ -60,7 +60,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       reactCompiler: true
     },
     updates: {
-      url: "https://u.expo.dev/cc4cfc30-ecd2-4cf1-aa80-1101d5dae90f"
+      url: `https://u.expo.dev/${projectId}`
     },
     runtimeVersion: {
       policy: "fingerprint"
@@ -68,7 +68,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     extra: {
       router: {},
       eas: {
-        projectId: "cc4cfc30-ecd2-4cf1-aa80-1101d5dae90f"
+        projectId
       }
     },
   }
